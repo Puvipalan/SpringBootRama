@@ -1,0 +1,30 @@
+name: Deploy to Tomcat 
+ 
+on: 
+  push: 
+    branches: 
+      - main 
+ 
+jobs: 
+  deploy: 
+    runs-on: windows-server 
+ 
+    env: 
+      TOMCAT_USERNAME: ${{ secrets.TOMCAT_USERNAME }} 
+      TOMCAT_PASSWORD: ${{ secrets.TOMCAT_PASSWORD }} 
+      TOMCAT_URL: ${{ secrets.TOMCAT_URL }} 
+ 
+    steps: 
+      - name: Checkout code 
+        uses: actions/checkout@v4 
+ 
+      - name: Set up Java 
+        uses: actions/setup-java@v3 
+        with: 
+          java-version: '24' 
+          distribution: 'temurin' 
+ 
+      - name: Build WAR 
+        run: mvn clean package 
+ 
+      - name: Deploy to Tomcat
