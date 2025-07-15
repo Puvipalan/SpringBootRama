@@ -1,0 +1,5 @@
+club\adsayaart\springbootrama\ServletInitializer.class
+club\adsayaart\springbootrama\rest\services\MediaStreamLoader.class
+club\adsayaart\springbootrama\SpringBootRamaApplication.class
+club\adsayaart\springbootrama\rest\controllers\MediaPlayController.class
+club\adsayaart\springbootrama\rest\services\MediaStreamLoaderImpl.class
